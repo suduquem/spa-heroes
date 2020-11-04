@@ -6,8 +6,8 @@
   <!-- Usa el índice que es emitido por el hijo en el evento, por eso $event -->
   <app-card
     (selectedHero)="seeHero($event)"
+    *ngFor="let hero of heroes; let idx = index"
     [hero]="hero"
     [index]="idx"
-    *ngFor="let hero of heroes; let idx = index"
   ></app-card>
 </div>

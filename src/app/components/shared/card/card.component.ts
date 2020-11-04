@@ -30,7 +30,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  seeHeroCard(): void {
+  seeHeroDetails(): void {
     this.router.navigate(['/hero', this.index]);
 
     // Usando el Output y EventEmitter
