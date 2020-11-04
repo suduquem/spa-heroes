@@ -1,0 +1,13 @@
+<h1>Marvel & DC Heroes</h1>
+<hr />
+<div class="card-columns">
+  <!-- El padre, o sea el componente heroes, está escuchando un evento del hijo Card -->
+  <!-- Card emite un evento que es selectedHero y llama la función del padre seeHero -->
+  <!-- Usa el índice que es emitido por el hijo en el evento, por eso $event -->
+  <app-card
+    (selectedHero)="seeHero($event)"
+    [hero]="hero"
+    [index]="idx"
+    *ngFor="let hero of heroes; let idx = index"
+  ></app-card>
+</div>

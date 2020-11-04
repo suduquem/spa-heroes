@@ -1,0 +1,35 @@
+<div class="row animated fadeIn fast">
+  <div class="col-md-4">
+    <img [src]="hero.image" class="img-fluid" [alt]="hero.name" />
+    <br />
+    <br />
+    <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">
+      Back
+    </a>
+  </div>
+  <div class="col-md-8">
+    <h1>
+      {{ hero.name | uppercase }}
+      <small>({{ hero.firstApparition | date: "y" }})</small>
+    </h1>
+    <hr />
+    <p class="text-justify">
+      {{ hero.biography }}
+    </p>
+    <div>
+      <img
+        *ngIf="hero.house == 'DC'"
+        class="img-logo"
+        src="assets/images/dc-logo.png"
+        alt="DC"
+      />
+      <!--*ngIf="hero.house == 'Marvel'"   -->
+      <img
+        *ngIf="hero.house != 'DC'"
+        class="img-logo"
+        src="assets/images/marvel-logo.png"
+        alt="Marvel"
+      />
+    </div>
+  </div>
+</div>

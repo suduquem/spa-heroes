@@ -1,0 +1,18 @@
+<h1>
+  Searching: <small>{{ term }}</small>
+</h1>
+<hr />
+
+<div class="row animated fadeIn fast" *ngIf="!foundHeroes.length">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      There are no results with the term: {{ term }}
+    </div>
+  </div>
+</div>
+
+<div class="card-columns">
+  <div *ngFor="let hero of foundHeroes">
+    <app-card [hero]="hero" [index]="hero.idx"></app-card>
+  </div>
+</div>
